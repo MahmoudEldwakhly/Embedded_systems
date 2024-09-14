@@ -1,0 +1,9 @@
+21:13:00 **** Incremental Build of configuration Debug for project First_data_structures_project ****
+make all 
+Building file: ../main.c
+Invoking: Cross GCC Compiler
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"main.d" -MT"main.o" -o "main.o" "../main.c"
+make: *** [main.o] Error -1073741502
+
+21:13:01 Build Finished (took 1s.368ms)
+

@@ -1,0 +1,70 @@
+/*
+ ============================================================================
+ Name        : Database_students with linked_list
+ Author      : Mahmoud Eldwakhly
+
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+#include "string.h"
+#include "conio.h"
+
+//Effective data
+
+struct Sdata
+{
+	int ID ;
+	char name [40] ;
+	float height ;
+};
+
+// linked list node
+struct SStudent
+{
+	struct Sdata student ;
+	struct SStudent* P_next_student ;   // pointer to next student
+};
+
+struct SStudent* GPFirststudent = NULL ;   // Global pointer to first student initialized to null
+
+void Addstudent()
+{
+	struct SStudent* PNewstudent ; // Pointer to new student
+	struct SStudent* PLaststudent ; // Pointer to the last student
+	// check list is empty or not == yes
+	if (GPFirststudent == NULL)
+	{
+		// Create new record
+		PNewstudent = (struct SStudent*) malloc (sizeof(struct SStudent)) ;  // At heap
+		// Assign it to GPFirst
+		GPFirststudent = PNewstudent ;
+	}
+	// if list have a records
+	else
+	{
+		// navigate until reaching the last record
+		PLaststudent = GPFirststudent ; // Starting
+		while (PLaststudent->P_next_student)
+		{
+			PLaststudent = PLaststudent->P_next_student ;
+		}
+
+
+	}
+
+
+
+}
+
+
+
+
+
+
+int main()
+{
+
+	return 0;
+}

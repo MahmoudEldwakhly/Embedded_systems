@@ -1,0 +1,19 @@
+00:01:42 **** Rebuild of configuration Debug for project first_data_structires_project( LIFO ) ****
+Info: Internal Builder is used for build
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\main.o" "..\\src\\main.c" 
+..\src\main.c:16:6: warning: return type of 'main' is not 'int' [-Wmain]
+ void main()
+      ^~~~
+..\src\main.c: In function 'main':
+..\src\main.c:43:33: warning: pointer targets in passing argument 2 of 'LIFO_get_item' differ in signedness [-Wpointer-sign]
+   if (LIFO_get_item(&uart_lifo, &temp) == LIFO_no_error)
+                                 ^
+In file included from ..\src\main.c:11:0:
+..\src\lifo.h:33:13: note: expected 'unsigned int *' but argument is of type 'int *'
+ LIFO_status LIFO_get_item(LIFO_Buf_t* lifo_buffer, unsigned int* item);
+             ^~~~~~~~~~~~~
+gcc -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\lifo.o" "..\\src\\lifo.c" 
+gcc -o "first_data_structires_project( LIFO ).exe" "src\\lifo.o" "src\\main.o" 
+
+00:01:43 Build Finished (took 1s.282ms)
+

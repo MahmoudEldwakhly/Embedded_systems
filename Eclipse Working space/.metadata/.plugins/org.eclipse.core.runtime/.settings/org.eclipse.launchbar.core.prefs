@@ -1,0 +1,15 @@
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/arch=x86
+LaunchTargetManager/org.eclipse.launchbar.core.launchTargetType.local,Local/os=win32
+configDescList=org.eclipse.launchbar.core.descriptorType.default\:fifo.exe,org.eclipse.launchbar.core.descriptorType.default\:Lab2 Debug,org.eclipse.launchbar.core.descriptorType.default\:LAB_2.exe,org.eclipse.launchbar.core.descriptorType.default\:lab1.exe,org.eclipse.launchbar.core.descriptorType.default\:lab1_Debug,org.eclipse.launchbar.core.descriptorType.default\:Database_students.exe,org.eclipse.launchbar.core.descriptorType.default\:first_data_structires_project.exe,org.eclipse.launchbar.core.descriptorType.default\:Data_base_students.exe
+eclipse.preferences.version=1
+org.eclipse.launchbar.core.descriptorType.default\:LAB_2.exe/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:Lab2\ Debug/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:Lab2\ Debug/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:fifo.exe/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:fifo.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:first_data_structires_project.exe/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:first_data_structires_project.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:lab1\ Debug/activeLaunchMode=debug
+org.eclipse.launchbar.core.descriptorType.default\:lab1.exe/activeLaunchMode=run
+org.eclipse.launchbar.core.descriptorType.default\:lab1.exe/activeLaunchTarget=org.eclipse.launchbar.core.launchTargetType.local\:Local
+org.eclipse.launchbar.core.descriptorType.default\:lab1_Debug/activeLaunchMode=debug

@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1725222501 source:d:\embedded\embeded systems diploma ( ks )\projects\data structures\data_base_students with linkedlist code blocks version\data_base_students\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

@@ -1,0 +1,8 @@
+23:58:17 **** Incremental Build of configuration Debug for project Database_students ****
+Info: Internal Builder is used for build
+gcc -o Database_students.exe "src\\main.o" 
+c:/mingw/bin/../lib/gcc/mingw32/6.3.0/../../../../mingw32/bin/ld.exe: cannot open output file Database_students.exe: Permission denied
+collect2.exe: error: ld returned 1 exit status
+
+23:58:17 Build Finished (took 441ms)
+

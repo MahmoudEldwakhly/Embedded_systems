@@ -1,0 +1,96 @@
+export PATH="/c/Program Files (x86)/GNU Arm Embedded Toolchain/10 2021.10/bin/:$PATH"    // For crosstoolchain
+arm-none-eabi-as.exe  -mcpu=arm926ej-s startup.s -o startup.o    // o file of startup 
+arm-none-eabi-gcc.exe -c -mcpu=arm926ej-s -I . uart.c -o uart.o
+arm-none-eabi-ld.exe -T linker_script.ld app.o startup.o uart.o -o mahmoud.elf
+arm-none-eabi-objcopy.exe -O binary mahmoud.elf mahmoud.bin
+
+
+/*
+export PATH: Adds the toolchain binaries to the PATH.
+arm-none-eabi-as: Assembles the startup assembly file.
+arm-none-eabi-gcc: Compiles the UART C file.
+arm-none-eabi-ld: Links all object files into an ELF executable.
+arm-none-eabi-objcopy: Converts the ELF file to a raw binary for flashing.
+
+*/
+
+
+//******************//
+
+arm-none-eabi-as.exe -g -mcpu=arm926ej-s startup.s -o startup.o
+
+// This command assembles the startup.s assembly source file into an object file (startup.o), targeting the ARM926EJ-S CPU architecture and including debugging information. This object file can be used in later stages of the build process, such as linking with other object files to create the final executable.
+
+arm-none-eabi-gcc.exe -g -c -mcpu=arm926ej-s -I . app.c -o app.o
+arm-none-eabi-gcc.exe -g -c -mcpu=arm926ej-s -I . uart.c -o uart.o  
+arm-none-eabi-ld.exe  -T linker_script.ld app.o startup.o uart.o -o mahmoud.elf
+arm-none-eabi-objdump.exe -h mahmoud.elf
+
+
+/********************************************************************************************************/
+
+"C:\Program Files (x86)\qemu\qemu-system-arm" -M versatilepb -m 128M -nographic -s -kernel mahmoud.elf
+// To run the board and burn my baremetal application 
+  
+"C:\Program Files (x86)\qemu\qemu-system-arm" -M versatilepb -m 128M -nographic -s -S -kernel mahmoud.elf
+// Open GDP Circuit , Processor is stopped , waiting for debugger
+/*
+
+The command you provided runs the QEMU emulator to simulate an ARM-based system. Here's a breakdown of what each part of the command does:
+
+"C:\Program Files (x86)\qemu\qemu-system-arm": This is the path to the QEMU executable that emulates ARM systems.
+
+-M versatilepb: This option tells QEMU to emulate the VersatilePB development board, which is an ARM926EJ-S-based machine commonly used for ARM emulation.
+
+-m 128M: Allocates 128 MB of memory (RAM) to the emulated machine.
+
+-nographic: Disables the graphical output. Instead, all input/output operations that would normally be displayed on the screen are redirected to the terminal. This is useful when running QEMU on a headless server or when you don't need a GUI.
+
+-s: Starts a gdb server on port 1234. This allows you to connect a debugger to the emulated machine to debug the code.
+
+-S: Pauses the CPU at startup. QEMU will start up but will not run the CPU until you explicitly tell it to start. This is particularly useful for debugging, as it allows you to set breakpoints before any code executes.
+
+-kernel mahmoud.elf: Specifies the ELF binary (mahmoud.elf) to load and execute as the kernel in the emulated system. This is the main program that will run on the emulated ARM CPU.
+
+*/
+
+// Arm cross toolchain  connection  (! Open another terminal ) 
+arm-none-eabi-gdb.exe mahmoud.elf
+target remote localhost:1234   // IP address of my device 
+
+(gdb) display/3i $pc
+1: x/3i $pc
+/*Output => 0x10000 <reset>:     ldr     sp, [pc, #4]    ; 0x1000c <stop+4>
+   0x10004 <reset+4>:   bl      0x10010 <main>
+   0x10008 <stop>:      b       0x10008 <stop>
+(gdb) */ 
+
+b main // create breakpoint on main 
+// make breakpoint on an address : 
+b *0x10010 
+// Step point (step instruction) at instruction level :
+si 
+// Step point (step instruction) at C code level :
+s
+// continue and stop at specific breakpoint 
+c 
+// Print variable : 
+print 
+// watch variable if a change it will make a breakpoint and stop 
+watch variablename 
+// Where are you 
+where 
+// Know breakpoints : 
+info breakpoints 
+// I am in which file : 
+l 
+// Breakpoint on specific file specific Line: 
+b uart.c:8 // file uart.c line 8 
+
+// Make pc go to reset section for example 
+set $pc=0x10000 
+
+
+
+
+

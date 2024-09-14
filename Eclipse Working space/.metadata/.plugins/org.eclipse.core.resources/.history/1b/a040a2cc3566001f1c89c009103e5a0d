@@ -1,0 +1,29 @@
+
+/*
+ ============================================================================
+ Name        : lifo.h
+ Author      : Mahmoud Eldwakhly
+ Version     : first_data_structures_project
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#ifndef LIFO_H_
+#define LIFO_H_
+
+// type defination
+
+typedef struct  {
+	unsigned int length ;
+	unsigned int counter ;
+	unsigned int* base ;
+	unsigned int* head ;
+}LIFO_Buf_t;
+
+// APIs
+LIFO_Add_item
+
+
+
+#endif   /* LIFO_H_ */

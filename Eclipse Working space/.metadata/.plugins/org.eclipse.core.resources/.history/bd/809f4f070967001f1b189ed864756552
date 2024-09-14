@@ -1,0 +1,27 @@
+/*
+ * fifo.c
+ *
+ *  Created on: Aug 30, 2024
+ *      Author: mahmoud eldawakhly
+ */
+
+
+#include "fifo.h"
+
+
+//FIFO APIs
+FIFO_Buffer_status FIFO_init (FIFO_Buffer_t* fifo ,element_type*  buffer , uint32_t length)
+{
+	if(buffer == NULL)
+		return FIFO_null ;
+	fifo->base = buffer ;
+	fifo->head = buffer ;
+	fifo->tail = buffer ;
+	fifo->count = 0 ;
+	return FIFO_no_error ;
+
+
+}
+FIFO_Buffer_status FIFO_enqueue (FIFO_Buffer_t* fifo ,element_type item)
+FIFO_Buffer_status FIFO_IS_FULL (FIFO_Buffer_t* fifo)
+void FIFO_print (FIFO_Buffer_t* fifo)

@@ -1,0 +1,25 @@
+/*
+ * main.c
+ *
+ *  Created on: Aug 29, 2024
+ *      Author: mahmoud eldawakhly
+ */
+
+
+/*
+ ============================================================================
+ Name        : first_data_structires_project.c
+ Author      : Mahmoud Eldwakhly
+ Version     :
+ Copyright   : Your copyright notice
+ Description : Hello World in C, Ansi-style
+ ============================================================================
+ */
+
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(void) {
+	puts("mahmoud"); /* prints !!!Hello World!!! */
+	return EXIT_SUCCESS;
+}

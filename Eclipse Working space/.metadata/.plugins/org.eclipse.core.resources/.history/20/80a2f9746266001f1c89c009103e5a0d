@@ -1,0 +1,27 @@
+/*
+ ============================================================================
+ Name        : main.c
+ Author      : Mahmoud Eldwakhly
+ Version     : first_data_structures_project
+ ============================================================================
+ */
+
+#include "stdio.h"
+#include "stdlib.h"
+#include "lifo.h"
+
+
+
+
+
+
+
+void main()
+{
+
+
+
+
+
+	return 0;
+}
