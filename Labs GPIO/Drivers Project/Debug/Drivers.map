@@ -14,7 +14,7 @@ c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externalt
 Allocating common symbols
 Common symbol       size              file
 
-PinCfg              0x4               stm32_f103c6_drivers/LCD_DRIVER/lcd.o
+PinCfg              0x4               Src/main.o
 
 Discarded input sections
 
@@ -29,6 +29,8 @@ Discarded input sections
  .ARM.exidx     0x0000000000000000        0x8 c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o
  .ARM.attributes
                 0x0000000000000000       0x1b c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/crt0.o
+ .group         0x0000000000000000        0xc Src/main.o
+ .group         0x0000000000000000        0xc Src/main.o
  .group         0x0000000000000000        0xc Src/main.o
  .group         0x0000000000000000        0xc Src/main.o
  .group         0x0000000000000000        0xc Src/main.o
@@ -747,7 +749,7 @@ LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
  .bss           0x0000000020000020       0x1c c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtbegin.o
  *(.bss*)
  *(COMMON)
- COMMON         0x000000002000003c        0x4 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
+ COMMON         0x000000002000003c        0x4 Src/main.o
                 0x000000002000003c                PinCfg
                 0x0000000020000040                . = ALIGN (0x4)
                 0x0000000020000040                _ebss = .
@@ -792,19 +794,19 @@ LOAD c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.exte
                 0x0000000000000164       0x1d c:/st/stm32cubeide_1.4.0/stm32cubeide/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.win32_1.4.0.202007081208/tools/bin/../lib/gcc/arm-none-eabi/7.3.1/thumb/v7-m/crtn.o
 OUTPUT(Drivers.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000     0x315e
- .debug_info    0x0000000000000000      0xca4 Src/main.o
- .debug_info    0x0000000000000ca4       0x22 Startup/startup_stm32f103c6tx.o
- .debug_info    0x0000000000000cc6      0xb48 stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
- .debug_info    0x000000000000180e      0xbf3 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
- .debug_info    0x0000000000002401      0xd5d stm32_f103c6_drivers/stm32_f103c6_GPIO_driver.o
+.debug_info     0x0000000000000000     0x30d1
+ .debug_info    0x0000000000000000      0xc17 Src/main.o
+ .debug_info    0x0000000000000c17       0x22 Startup/startup_stm32f103c6tx.o
+ .debug_info    0x0000000000000c39      0xb48 stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
+ .debug_info    0x0000000000001781      0xbf3 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
+ .debug_info    0x0000000000002374      0xd5d stm32_f103c6_drivers/stm32_f103c6_GPIO_driver.o
 
-.debug_abbrev   0x0000000000000000      0x83a
- .debug_abbrev  0x0000000000000000      0x224 Src/main.o
- .debug_abbrev  0x0000000000000224       0x12 Startup/startup_stm32f103c6tx.o
- .debug_abbrev  0x0000000000000236      0x1de stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
- .debug_abbrev  0x0000000000000414      0x1f4 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
- .debug_abbrev  0x0000000000000608      0x232 stm32_f103c6_drivers/stm32_f103c6_GPIO_driver.o
+.debug_abbrev   0x0000000000000000      0x817
+ .debug_abbrev  0x0000000000000000      0x201 Src/main.o
+ .debug_abbrev  0x0000000000000201       0x12 Startup/startup_stm32f103c6tx.o
+ .debug_abbrev  0x0000000000000213      0x1de stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
+ .debug_abbrev  0x00000000000003f1      0x1f4 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
+ .debug_abbrev  0x00000000000005e5      0x232 stm32_f103c6_drivers/stm32_f103c6_GPIO_driver.o
 
 .debug_loc      0x0000000000000000      0x7cc
  .debug_loc     0x0000000000000000      0x128 Src/main.o
@@ -831,54 +833,56 @@ OUTPUT(Drivers.elf elf32-littlearm)
  .debug_ranges  0x0000000000000068       0x58 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
  .debug_ranges  0x00000000000000c0       0x50 stm32_f103c6_drivers/stm32_f103c6_GPIO_driver.o
 
-.debug_macro    0x0000000000000000     0x1ec7
- .debug_macro   0x0000000000000000      0x17f Src/main.o
- .debug_macro   0x000000000000017f      0xa60 Src/main.o
- .debug_macro   0x0000000000000bdf       0x18 Src/main.o
- .debug_macro   0x0000000000000bf7       0x22 Src/main.o
- .debug_macro   0x0000000000000c19       0x40 Src/main.o
- .debug_macro   0x0000000000000c59       0x94 Src/main.o
- .debug_macro   0x0000000000000ced       0x3c Src/main.o
- .debug_macro   0x0000000000000d29       0x34 Src/main.o
- .debug_macro   0x0000000000000d5d       0x16 Src/main.o
- .debug_macro   0x0000000000000d73      0x10e Src/main.o
- .debug_macro   0x0000000000000e81       0x8d Src/main.o
- .debug_macro   0x0000000000000f0e       0x57 Src/main.o
- .debug_macro   0x0000000000000f65       0x52 Src/main.o
- .debug_macro   0x0000000000000fb7       0x1f Src/main.o
- .debug_macro   0x0000000000000fd6       0x43 Src/main.o
- .debug_macro   0x0000000000001019       0x20 Src/main.o
- .debug_macro   0x0000000000001039      0x1a3 Src/main.o
- .debug_macro   0x00000000000011dc      0x330 Src/main.o
- .debug_macro   0x000000000000150c       0x16 Src/main.o
- .debug_macro   0x0000000000001522       0x29 Src/main.o
- .debug_macro   0x000000000000154b       0xef Src/main.o
- .debug_macro   0x000000000000163a       0x6a Src/main.o
- .debug_macro   0x00000000000016a4      0x1df Src/main.o
- .debug_macro   0x0000000000001883       0xb4 Src/main.o
- .debug_macro   0x0000000000001937       0xd0 Src/main.o
- .debug_macro   0x0000000000001a07      0x152 stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
- .debug_macro   0x0000000000001b59       0x3a stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
- .debug_macro   0x0000000000001b93      0x151 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
- .debug_macro   0x0000000000001ce4       0x10 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
- .debug_macro   0x0000000000001cf4       0x94 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
- .debug_macro   0x0000000000001d88      0x13f stm32_f103c6_drivers/stm32_f103c6_GPIO_driver.o
+.debug_macro    0x0000000000000000     0x1fb9
+ .debug_macro   0x0000000000000000      0x191 Src/main.o
+ .debug_macro   0x0000000000000191      0xa60 Src/main.o
+ .debug_macro   0x0000000000000bf1       0x18 Src/main.o
+ .debug_macro   0x0000000000000c09       0x22 Src/main.o
+ .debug_macro   0x0000000000000c2b       0x40 Src/main.o
+ .debug_macro   0x0000000000000c6b       0x94 Src/main.o
+ .debug_macro   0x0000000000000cff       0x3c Src/main.o
+ .debug_macro   0x0000000000000d3b       0x34 Src/main.o
+ .debug_macro   0x0000000000000d6f       0x16 Src/main.o
+ .debug_macro   0x0000000000000d85      0x10e Src/main.o
+ .debug_macro   0x0000000000000e93       0x8d Src/main.o
+ .debug_macro   0x0000000000000f20       0x57 Src/main.o
+ .debug_macro   0x0000000000000f77       0x52 Src/main.o
+ .debug_macro   0x0000000000000fc9       0x1f Src/main.o
+ .debug_macro   0x0000000000000fe8       0x43 Src/main.o
+ .debug_macro   0x000000000000102b       0x20 Src/main.o
+ .debug_macro   0x000000000000104b      0x1a3 Src/main.o
+ .debug_macro   0x00000000000011ee      0x330 Src/main.o
+ .debug_macro   0x000000000000151e       0x16 Src/main.o
+ .debug_macro   0x0000000000001534       0x29 Src/main.o
+ .debug_macro   0x000000000000155d       0xef Src/main.o
+ .debug_macro   0x000000000000164c       0x6a Src/main.o
+ .debug_macro   0x00000000000016b6      0x1df Src/main.o
+ .debug_macro   0x0000000000001895       0xb4 Src/main.o
+ .debug_macro   0x0000000000001949       0xd0 Src/main.o
+ .debug_macro   0x0000000000001a19       0xa0 Src/main.o
+ .debug_macro   0x0000000000001ab9       0x40 Src/main.o
+ .debug_macro   0x0000000000001af9      0x152 stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
+ .debug_macro   0x0000000000001c4b       0x3a stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
+ .debug_macro   0x0000000000001c85      0x151 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
+ .debug_macro   0x0000000000001dd6       0x10 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
+ .debug_macro   0x0000000000001de6       0x94 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
+ .debug_macro   0x0000000000001e7a      0x13f stm32_f103c6_drivers/stm32_f103c6_GPIO_driver.o
 
-.debug_line     0x0000000000000000     0x19ee
- .debug_line    0x0000000000000000      0x5f5 Src/main.o
- .debug_line    0x00000000000005f5       0x84 Startup/startup_stm32f103c6tx.o
- .debug_line    0x0000000000000679      0x63c stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
- .debug_line    0x0000000000000cb5      0x6a3 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
- .debug_line    0x0000000000001358      0x696 stm32_f103c6_drivers/stm32_f103c6_GPIO_driver.o
+.debug_line     0x0000000000000000     0x1abe
+ .debug_line    0x0000000000000000      0x6c5 Src/main.o
+ .debug_line    0x00000000000006c5       0x84 Startup/startup_stm32f103c6tx.o
+ .debug_line    0x0000000000000749      0x63c stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
+ .debug_line    0x0000000000000d85      0x6a3 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
+ .debug_line    0x0000000000001428      0x696 stm32_f103c6_drivers/stm32_f103c6_GPIO_driver.o
 
 .debug_str      0x0000000000000000     0x7b45
- .debug_str     0x0000000000000000     0x760d Src/main.o
-                                       0x7880 (size before relaxing)
- .debug_str     0x000000000000760d       0x31 Startup/startup_stm32f103c6tx.o
+ .debug_str     0x0000000000000000     0x78ae Src/main.o
+                                       0x7b21 (size before relaxing)
+ .debug_str     0x00000000000078ae       0x31 Startup/startup_stm32f103c6tx.o
                                          0x73 (size before relaxing)
- .debug_str     0x000000000000763e       0xdc stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
+ .debug_str     0x00000000000078df       0x69 stm32_f103c6_drivers/KEYPAD_DRIVER/keypad.o
                                        0x782f (size before relaxing)
- .debug_str     0x000000000000771a      0x30f stm32_f103c6_drivers/LCD_DRIVER/lcd.o
+ .debug_str     0x0000000000007948       0xe1 stm32_f103c6_drivers/LCD_DRIVER/lcd.o
                                        0x7a88 (size before relaxing)
  .debug_str     0x0000000000007a29      0x11c stm32_f103c6_drivers/stm32_f103c6_GPIO_driver.o
                                        0x7892 (size before relaxing)

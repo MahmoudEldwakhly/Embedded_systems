@@ -27,25 +27,25 @@ Idx Name          Size      VMA       LMA       File off  Algn
                   ALLOC
  11 .ARM.attributes 00000029  00000000  00000000  00020020  2**0
                   CONTENTS, READONLY
- 12 .debug_info   0000315e  00000000  00000000  00020049  2**0
+ 12 .debug_info   000030d1  00000000  00000000  00020049  2**0
                   CONTENTS, READONLY, DEBUGGING
- 13 .debug_abbrev 0000083a  00000000  00000000  000231a7  2**0
+ 13 .debug_abbrev 00000817  00000000  00000000  0002311a  2**0
                   CONTENTS, READONLY, DEBUGGING
- 14 .debug_loc    000007cc  00000000  00000000  000239e1  2**0
+ 14 .debug_loc    000007cc  00000000  00000000  00023931  2**0
                   CONTENTS, READONLY, DEBUGGING
- 15 .debug_aranges 00000158  00000000  00000000  000241b0  2**3
+ 15 .debug_aranges 00000158  00000000  00000000  00024100  2**3
                   CONTENTS, READONLY, DEBUGGING
- 16 .debug_ranges 00000110  00000000  00000000  00024308  2**3
+ 16 .debug_ranges 00000110  00000000  00000000  00024258  2**3
                   CONTENTS, READONLY, DEBUGGING
- 17 .debug_macro  00001ec7  00000000  00000000  00024418  2**0
+ 17 .debug_macro  00001fb9  00000000  00000000  00024368  2**0
                   CONTENTS, READONLY, DEBUGGING
- 18 .debug_line   000019ee  00000000  00000000  000262df  2**0
+ 18 .debug_line   00001abe  00000000  00000000  00026321  2**0
                   CONTENTS, READONLY, DEBUGGING
- 19 .debug_str    00007b45  00000000  00000000  00027ccd  2**0
+ 19 .debug_str    00007b45  00000000  00000000  00027ddf  2**0
                   CONTENTS, READONLY, DEBUGGING
- 20 .comment      0000007b  00000000  00000000  0002f812  2**0
+ 20 .comment      0000007b  00000000  00000000  0002f924  2**0
                   CONTENTS, READONLY
- 21 .debug_frame  00000414  00000000  00000000  0002f890  2**2
+ 21 .debug_frame  00000414  00000000  00000000  0002f9a0  2**2
                   CONTENTS, READONLY, DEBUGGING
 
 Disassembly of section .text:
@@ -389,7 +389,7 @@ int main(void) {
  800034e:	e000      	b.n	8000352 <main+0xc6>
 			break;
  8000350:	bf00      	nop
-	while (1) {
+		key_pressed = Keypad_getkey();
  8000352:	e7eb      	b.n	800032c <main+0xa0>
  8000354:	08000be0 	.word	0x08000be0
  8000358:	08000bf4 	.word	0x08000bf4

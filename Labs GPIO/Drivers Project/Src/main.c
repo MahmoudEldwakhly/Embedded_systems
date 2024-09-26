@@ -14,8 +14,8 @@
 
 #include "stm32f103x6.h"
 #include "Stm32_F103C6_gpio_driver.h"
-//#include "lcd.h"
-//#include "keypad.h"
+#include "lcd.h"
+#include "keypad.h"
 
 #define ZERO 0x01
 #define ONE 0x79
