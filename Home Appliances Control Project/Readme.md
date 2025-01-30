@@ -68,13 +68,6 @@ The system is built using a **TM4C123GH6PM microcontroller**, which controls app
 ## Conclusion
 This project successfully demonstrates an embedded system for **smart home automation**, integrating hardware and software to enhance home security and convenience. Future improvements may include **Wi-Fi connectivity** and **voice control integration**.
 
----
-### Team Members
-- **Mahmoud Eldwakhly**
-- **Other team members** (add names here)
-
-### Supervisor
-- **Eng. Hesham Salah**
 
 ---
 Project developed for **Ain Shams University - Faculty of Engineering**.
