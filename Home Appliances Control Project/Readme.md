@@ -1,7 +1,7 @@
 # Home Appliances Control Project
 
 ## Overview
-This project is a **mobile-based home automation system** that allows users to control home appliances remotely using an Android application. It is developed as part of the **CSE211: Introduction to Embedded Systems** course at **Ain Shams University**.
+This project is a **mobile-based home automation system** that allows users to control home appliances remotely using an GUI application. It is developed as part of the **CSE211: Introduction to Embedded Systems** course at **Ain Shams University**.
 
 The system is built using a **TM4C123GH6PM microcontroller**, which controls appliances based on user commands received via UART communication. It also monitors the room temperature and door status, triggering an alarm if the temperature exceeds a predefined threshold.
 
