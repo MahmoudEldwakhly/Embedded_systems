@@ -55,7 +55,7 @@ The system is built using a **TM4C123GH6PM microcontroller**, which controls app
 
 ## How to Use
 1. **Upload the firmware** to the TM4C123GH6PM board.
-2. **Install the mobile app** on an Android device.
+2. **Using The GUI Application
 3. **Connect via Bluetooth/UART** to the microcontroller.
 4. Use the app to **toggle the lamp/plug, check the door status, and monitor the temperature**.
 5. If the **temperature is too high**, the alarm will activate automatically.
